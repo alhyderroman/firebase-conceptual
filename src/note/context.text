@@ -1,0 +1,23 @@
+1. create a context as below:
+ export const DataContext=createContext(null);
+
+ 2. Wrap the children components with context provider.
+
+ const data=
+
+
+          <DataContext.Provider value={   }>  {any single string, single number, multiple value as array or object and function can be passed }
+          <ChildrenComponent/>           {এখানে কম্পানেন্ট লিস্ট থাকবে যেগুলোর মধ্যে ডাটা পাস হবে। তবে প্যারেন্ট কম্পোনেন্ট লিখলে আর 
+                                           তার চাইল্ড কম্পোন্টে গুলোকে লিখতে হয় না।}
+          </DataContext.Provider>
+ 
+        // value exapmple
+         value={'Roman'}  string
+         value={77}  number 
+         value={{}}  object or value={objectName}
+         value={[]}  array  or value={arrayName}
+         value={functionName}  function//
+
+3. access context value
+import DataContext from '/path'
+const contextData=useContext(DataContext);
